@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="bitKeeper.Views.KeyListPage"
+             Title="{Binding Title}">
+    
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="{Binding Title}"/>
+        <Button Text="OpenKey" Command="{Binding NavigateCommand}" CommandParameter="KeyFormPage?id=2ebabb9a-32fb-44b7-b9fe-23ea4b0e869a" />
+    </StackLayout>
+
+</ContentPage>

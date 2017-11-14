@@ -23,13 +23,17 @@ namespace bitKeeper
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            //await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("/RootPage/NavigationPage/AboutPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
-            Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<RootPage>();
+            Container.RegisterTypeForNavigation<AboutPage>();
+            Container.RegisterTypeForNavigation<KeyListPage>();
+            Container.RegisterTypeForNavigation<KeyFormPage>();
         }
     }
 }
