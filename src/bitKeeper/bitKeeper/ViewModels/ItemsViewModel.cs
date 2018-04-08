@@ -7,16 +7,21 @@ using Xamarin.Forms;
 
 using bitKeeper.Models;
 using bitKeeper.Views;
+using bitKeeper.Services;
+using bitKeeper.Exceptions;
 
 namespace bitKeeper.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
+        private IDataStore<Item> dataStore;
+
         public ObservableCollection<Item> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public ItemsViewModel(IDataStore<Item> dataStore)
         {
+            this.dataStore = dataStore; 
             Title = "Browse";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
@@ -25,7 +30,7 @@ namespace bitKeeper.ViewModels
             {
                 var _item = item as Item;
                 Items.Add(_item);
-                await DataStore.AddItemAsync(_item);
+                await dataStore.AddItemAsync(_item);
             });
         }
 
@@ -39,11 +44,16 @@ namespace bitKeeper.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await dataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
                     Items.Add(item);
                 }
+            }
+            catch (WrongEncryptionKeyException wx)
+            {
+                Debug.WriteLine(wx);
+                MessagingCenter.Send(this, "WrongSecret");
             }
             catch (Exception ex)
             {

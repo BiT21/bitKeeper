@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using bitKeeper.Models;
 using bitKeeper.Views;
 using bitKeeper.ViewModels;
+using Unity;
 
 namespace bitKeeper.Views
 {
@@ -22,7 +23,8 @@ namespace bitKeeper.Views
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            //BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = (App.Current as App).Container.Resolve<ItemsViewModel>();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)

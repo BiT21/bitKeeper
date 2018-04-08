@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bitKeeper.iOS", "bitKeeper\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bitKeeper.UWP", "bitKeeper\bitKeeper.UWP\bitKeeper.UWP.csproj", "{0CD22F04-2264-4792-B302-983776DAAF1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bitKeeper", "bitKeeper\bitKeeper\bitKeeper.csproj", "{F94A08DF-78D1-43DA-84FE-C955D94099B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "bitKeeper", "bitKeeper\bitKeeper\bitKeeper.csproj", "{F94A08DF-78D1-43DA-84FE-C955D94099B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{55A7D004-F9E7-43F8-8CBB-FD635042CA94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -254,6 +256,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9097605A-7816-4C2C-8067-8DF8ED46EAE5} = {55A7D004-F9E7-43F8-8CBB-FD635042CA94}
+		{F7055766-760A-49AD-9FAC-6D4BE475597D} = {55A7D004-F9E7-43F8-8CBB-FD635042CA94}
+		{0CD22F04-2264-4792-B302-983776DAAF1E} = {55A7D004-F9E7-43F8-8CBB-FD635042CA94}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EECB8BEE-6E32-4058-B87E-29812147E767}

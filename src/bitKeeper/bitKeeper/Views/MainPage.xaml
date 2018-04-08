@@ -2,9 +2,11 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:views="clr-namespace:bitKeeper.Views"
-            x:Class="bitKeeper.Views.MainPage">
+            x:Class="bitKeeper.Views.MainPage"
+            >
+            <!--BarBackgroundColor="{StaticResource ColorBitYellow}"-->
     <TabbedPage.Children>
-        <NavigationPage Title="Browse">
+        <NavigationPage Title="Key List">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_feed.png"/>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage     xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bitKeeper.Views.LogonView">
+    <ContentPage.Content>
+
+        <StackLayout
+            HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Logon to bitKeeper" FontSize="Small" />
+            <Entry Text="{Binding Password}" IsPassword="True" FontSize="Medium" Keyboard="Numeric" />
+            <Button Text="Logon" Command="{Binding LogonCommand}"/>
+            <!--<StackLayout Orientation="Horizontal"></StackLayout>-->
+            <Label Text="{Binding ErrorString}"   FontSize="Micro" TextColor="Red" IsVisible="{Binding IsErrorVisible}"/>
+        </StackLayout>            
+
+    </ContentPage.Content>
+</ContentPage>
